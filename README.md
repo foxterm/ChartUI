@@ -9,3 +9,6 @@ SwiftUI ChartUI
 ```
 # Demo
 ![Demo](demo/demo.png)
+
+
+![Demo](demo/cpu.png)
