@@ -1,0 +1,19 @@
+// swift-tools-version:5.10
+
+import PackageDescription
+
+let package = Package(
+    name: "ChartUI",
+    platforms: [
+        .iOS(.v16),
+        .macOS(.v13),
+    ],
+    products: [
+        .library(name: "ChartUI", targets: ["ChartUI"]),
+    ],
+    targets: [
+        .target(
+            name: "ChartUI"
+        )
+    ]
+)
