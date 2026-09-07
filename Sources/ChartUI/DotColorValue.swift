@@ -5,10 +5,13 @@
 import SwiftUI
 
 public struct DotColorValue: Identifiable, Hashable {
-    public let id = UUID()
     public let label: String
     public let color: Color
     public let value: Double
+
+    public var id: String {
+        label
+    }
 
     public init(label: String, color: Color, value: Double) {
         self.label = label
