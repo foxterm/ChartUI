@@ -19,5 +19,5 @@ public struct DotColorValue: Identifiable, Hashable {
         self.value = value
     }
 
-    public static let empty = [DotColorValue(label: "Empty", color: Color.gray.opacity(0.5), value: 1)]
+    public static let empty = [DotColorValue(label: "Empty", color: Color.gray.opacity(0.12), value: 1)]
 }
