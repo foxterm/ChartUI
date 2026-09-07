@@ -15,13 +15,29 @@ public struct TripleRingLoadChart: View {
     var customLineWidth: CGFloat?
     var customSpacing: CGFloat?
 
-    public init(load1: Double, load5: Double, load15: Double, physicalCores: Int?, customLineWidth: CGFloat? = nil, customSpacing: CGFloat? = nil) {
+    let load1Colors: [Color]
+    let load5Colors: [Color]
+    let load15Colors: [Color]
+
+    public init(load1: Double, load5: Double, load15: Double, physicalCores: Int?, customLineWidth: CGFloat? = nil, customSpacing: CGFloat? = nil, load1Colors: [Color] = [
+        Color(red: 0 / 255, green: 122 / 255, blue: 255 / 255),
+        Color(red: 0 / 255, green: 201 / 255, blue: 167 / 255),
+    ], load5Colors: [Color] = [
+        Color(red: 255 / 255, green: 204 / 255, blue: 0 / 255),
+        Color(red: 255 / 255, green: 149 / 255, blue: 0 / 255),
+    ], load15Colors: [Color] = [
+        Color(red: 175 / 255, green: 82 / 255, blue: 222 / 255),
+        Color(red: 255 / 255, green: 45 / 255, blue: 85 / 255),
+    ]) {
         self.load1 = load1
         self.load5 = load5
         self.load15 = load15
         self.physicalCores = physicalCores
         self.customLineWidth = customLineWidth
         self.customSpacing = customSpacing
+        self.load1Colors = load1Colors
+        self.load5Colors = load5Colors
+        self.load15Colors = load15Colors
     }
 
     public var body: some View {
@@ -37,10 +53,7 @@ public struct TripleRingLoadChart: View {
                     maxCap: maxCap,
                     diameter: diameter,
                     lineWidth: ringWidth,
-                    colors: [
-                        Color(red: 0 / 255, green: 122 / 255, blue: 255 / 255),
-                        Color(red: 0 / 255, green: 201 / 255, blue: 167 / 255),
-                    ]
+                    colors: load1Colors
                 )
 
                 // 中环：5分钟 (黄 ➔ 橙)
@@ -49,10 +62,7 @@ public struct TripleRingLoadChart: View {
                     maxCap: maxCap,
                     diameter: diameter - (ringWidth + ringSpacing) * 2,
                     lineWidth: ringWidth,
-                    colors: [
-                        Color(red: 255 / 255, green: 204 / 255, blue: 0 / 255),
-                        Color(red: 255 / 255, green: 149 / 255, blue: 0 / 255),
-                    ]
+                    colors: load5Colors
                 )
 
                 // 内环：15分钟 (紫 ➔ 玫红)
@@ -61,10 +71,7 @@ public struct TripleRingLoadChart: View {
                     maxCap: maxCap,
                     diameter: diameter - (ringWidth + ringSpacing) * 4,
                     lineWidth: ringWidth,
-                    colors: [
-                        Color(red: 175 / 255, green: 82 / 255, blue: 222 / 255),
-                        Color(red: 255 / 255, green: 45 / 255, blue: 85 / 255),
-                    ]
+                    colors: load15Colors
                 )
             }
             .frame(width: proxy.size.width, height: proxy.size.height, alignment: .center)
