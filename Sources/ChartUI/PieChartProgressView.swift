@@ -6,15 +6,15 @@ import Charts
 import SwiftUI
 
 public struct PieChartProgressView: View {
-    let portions: [
+    let data: [
         DotColorValue
     ]
-    public init(portions: [DotColorValue]) {
-        self.portions = portions
+    public init(data: [DotColorValue]) {
+        self.data = data
     }
 
     public var body: some View {
-        Chart(portions) { element in
+        Chart(data) { element in
             SectorMark(
                 angle: .value(element.label, element.value),
                 innerRadius: .ratio(0.55),
