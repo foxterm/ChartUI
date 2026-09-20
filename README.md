@@ -7,6 +7,12 @@ SwiftUI ChartUI
 ```swift
 .product(name: "ChartUI", package: "ChartUI"),
 ```
+
+
+```
+pod 'ChartUI', :git => 'https://github.com/foxterm/ChartUI.git'
+```
+
 # Demo
 ![Demo](demo/demo.png)
 
