@@ -9,11 +9,14 @@ let package = Package(
         .macOS(.v14),
     ],
     products: [
-        .library(name: "ChartUI", targets: ["ChartUI"]),
+        .library(name: "ChartUI", targets: ["ChartUI"])
     ],
     targets: [
         .target(
-            name: "ChartUI"
-        ),
+            name: "ChartUI",
+            linkerSettings: [
+                .linkedFramework("Charts")
+            ]
+        )
     ]
 )
