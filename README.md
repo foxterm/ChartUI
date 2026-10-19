@@ -1,27 +1,29 @@
 # ChartUI
 
-FoxTerm APP 专用 SwiftUI 图表组件库，提供点阵分段条、三层负载环、饼图等可视化组件。
+[English](README.md) | [中文文档](README_CN.md)
 
-> 本库为 [FoxTerm](https://foxterm.app/) APP 专用核心组件，欢迎下载使用：[https://foxterm.app/](https://foxterm.app/)
+A dedicated SwiftUI chart component library for the FoxTerm APP, providing dot segment bars, triple load rings, pie charts, and other visualization components.
 
-## 组件
+> This library is a dedicated core component for the [FoxTerm](https://foxterm.app/) APP. Feel free to download and try it: [https://foxterm.app/](https://foxterm.app/)
 
-| 组件 | 说明 |
-|------|------|
-| `DotSegmentBarView` | 点阵分段条图，基于 Canvas 绘制，像素级对齐，适合 CPU/内存使用率展示 |
-| `TripleRingLoadChart` | 三层同心渐变环，展示 1/5/15 分钟负载，支持自定义颜色和线宽 |
-| `PieChartProgressView` | 环形饼图，基于 Swift Charts `SectorMark` |
-| `DotColorValue` | 通用数据模型（标签 + 颜色 + 数值） |
+## Components
 
-## 环境要求
+| Component | Description |
+|-----------|-------------|
+| `DotSegmentBarView` | Dot segment bar chart, rendered with Canvas for pixel-perfect alignment, ideal for CPU/memory usage display |
+| `TripleRingLoadChart` | Triple concentric gradient rings showing 1/5/15 minute load averages, with customizable colors and line widths |
+| `PieChartProgressView` | Ring-style pie chart, built with Swift Charts `SectorMark` |
+| `DotColorValue` | Generic data model (label + color + value) |
 
-| 平台 | 最低版本 |
-|------|---------|
-| iOS  | 17.0    |
-| macOS | 14.0   |
-| Swift | 5.10   |
+## Requirements
 
-## 安装
+| Platform | Minimum Version |
+|----------|----------------|
+| iOS      | 17.0           |
+| macOS    | 14.0           |
+| Swift    | 5.10           |
+
+## Installation
 
 ### Swift Package Manager
 
@@ -39,9 +41,9 @@ FoxTerm APP 专用 SwiftUI 图表组件库，提供点阵分段条、三层负�
 pod 'ChartUI', :git => 'https://github.com/foxterm/ChartUI.git'
 ```
 
-## 使用
+## Usage
 
-### DotSegmentBarView — 点阵分段条
+### DotSegmentBarView — Dot Segment Bar
 
 ```swift
 DotSegmentBarView(data: [
@@ -51,7 +53,7 @@ DotSegmentBarView(data: [
 ])
 ```
 
-### TripleRingLoadChart — 三层负载环
+### TripleRingLoadChart — Triple Load Ring
 
 ```swift
 TripleRingLoadChart(
@@ -62,7 +64,7 @@ TripleRingLoadChart(
 )
 ```
 
-### PieChartProgressView — 环形饼图
+### PieChartProgressView — Ring Pie Chart
 
 ```swift
 PieChartProgressView(data: [
@@ -77,6 +79,6 @@ PieChartProgressView(data: [
 
 ![Demo](demo/cpu.png)
 
-## 许可证
+## License
 
 MIT
